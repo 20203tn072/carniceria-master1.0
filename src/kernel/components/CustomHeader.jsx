@@ -14,14 +14,15 @@ const CustomHeader = () => (
       backgroundColor: '#A2160F',
       alignItems: 'center',
       justifyContent: 'center',
-      height: 170, // Ajusta la altura según tus necesidades
+      height: 140, // Ajusta la altura según tus necesidades
       borderRadius:30,
+      marginBottom: 75
     },
     headerImage: {
-      marginTop:180,
+      marginTop: 120,
       width: 170, // Ajusta el ancho según tus necesidades
       height: 170, // Ajusta la altura según tus necesidades
-      borderRadius:120, 
+      borderRadius: 120, 
       backgroundColor:'white'
   },
   });

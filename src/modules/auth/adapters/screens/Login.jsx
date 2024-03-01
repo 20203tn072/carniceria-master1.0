@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input, Button, Image, Icon, Color, Text } from '@rneui/base';
+import { Input, Button, Image, Icon,  Text } from '@rneui/base';
 import { View, StyleSheet, Alert } from 'react-native';
 import { isEmpty } from 'lodash';
 
@@ -36,6 +36,10 @@ export default function Login(props) {
             setEmailErrorMessage('Campo obligatorio para el correo electrónico');
             setPasswordErrorMessage('Campo obligatorio para la contraseña');
         }
+    }
+
+    const handleForgotPassword = () => {
+        Alert.alert("Olvidaste la Contraseña", "Por favor, introduce tu dirección de correo electrónico para restablecer tu contraseña.");
     }
 
     return (
@@ -75,6 +79,7 @@ export default function Login(props) {
                             onPress={() => setShowPassword(!showPassword)} />
                     }
                     errorMessage={passwordErrorMessage} />
+                    <Button title='¿Olvidaste la Contraseña?' onPress={handleForgotPassword} type='clear' style={styles.textForgotPassword} />
                 <Button
                     title='Iniciar sesión'
                     onPress={login}
@@ -154,5 +159,9 @@ const styles = StyleSheet.create({
     textBienvenido: {
         fontSize: 30,
         color: '#A2160F',
+    },
+    textForgotPassword: {
+        color: 'red',
+        textAlign: 'right'
     }
 })

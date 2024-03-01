@@ -21,9 +21,9 @@ const Navigation = () => {
   
 
   return (
-    <NavigationContainer>
+    <NavigationContainer >
       {userLoggedIn ? (
-        <Tab.Navigator
+        <Tab.Navigator 
         screenOptions={({ route }) => ({
           header: () => <CustomHeader/>, 
           tabBarIcon: ({ focused, color, size }) => {
@@ -33,14 +33,14 @@ const Navigation = () => {
           },
           tabBarActiveTintColor: '#7A1010',
           tabBarInactiveTintColor: 'black',
-          tabBarStyle: { backgroundColor: '#fff', height: 70 },
+          tabBarStyle: { backgroundColor: '#fff', height: 75 },
         })}
       >
         <Tab.Screen name='HomeStack' component={HomeStack} options={{ title: 'Home' }} />
         <Tab.Screen name='CarritoStack' component={CarritoStack} options={{ title: 'Carrito' }} />
         <Tab.Screen name='FavoritesStack' component={FavoritesStack} options={{ title: 'Favoritos' }} />
         <Tab.Screen name='HistorialStack' component={HistorialStack} options={{ title: 'Historial' }} />
-        {userLoggedIn && <Tab.Screen name='Perfil' options={{ title: 'Perfil' }}>
+        {userLoggedIn && <Tab.Screen  name='Perfil' options={{ title: 'Perfil' }}>
             {() => <Perfil setUserLoggedIn={setUserLoggedIn} />}
           </Tab.Screen>}
       </Tab.Navigator>
@@ -75,5 +75,6 @@ const getIconName = (routeName, focused) => {
 
   return { iconName, iconType };
 };
+
 
 export default Navigation;

@@ -17,58 +17,58 @@ export default function CreateAccount() {
 
 
     return (
-        <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <ScrollView contentContainerStyle={styles.scrollContainer} style={styles.scrollView}>
             <View style={styles.container}>
-            <View style={styles.viewText}><Text style={styles.text}>Nombre: *</Text></View>
+                <View style={styles.viewText}><Text style={styles.text}>Nombre: *</Text></View>
 
-            <Input 
-                onChange={({ nativeEvent: { text } }) => setEmail(text)} labelStyle={styles.label}
-                containerStyle={styles.input} errorMessage={showMessage1}
+                <Input
+                    onChange={({ nativeEvent: { text } }) => setEmail(text)} labelStyle={styles.label}
+                    containerStyle={styles.input} errorMessage={showMessage1}
 
-            />
-            <View style={styles.viewText}><Text style={styles.text}>Apellido: *</Text></View>
+                />
+                <View style={styles.viewText}><Text style={styles.text}>Apellido: *</Text></View>
 
-            <Input 
-                onChange={({ nativeEvent: { text } }) => setEmail(text)} labelStyle={styles.label}
-                containerStyle={styles.input} errorMessage={showMessage1}
+                <Input
+                    onChange={({ nativeEvent: { text } }) => setEmail(text)} labelStyle={styles.label}
+                    containerStyle={styles.input} errorMessage={showMessage1}
 
-            />
-            <View style={styles.viewText}><Text style={styles.text}>Teléfono: *</Text></View>
-            <Input keyboardType='phone-pad'
-                onChange={({ nativeEvent: { text } }) => setEmail(text)} labelStyle={styles.label}
-                containerStyle={styles.input} errorMessage={showMessage1}
+                />
+                <View style={styles.viewText}><Text style={styles.text}>Teléfono: *</Text></View>
+                <Input keyboardType='phone-pad'
+                    onChange={({ nativeEvent: { text } }) => setEmail(text)} labelStyle={styles.label}
+                    containerStyle={styles.input} errorMessage={showMessage1}
 
-            />
-            <View style={styles.viewText}><Text style={styles.text}>Usuario: *</Text></View>
-            <Input 
-                onChange={({ nativeEvent: { text } }) => setEmail(text)} labelStyle={styles.label}
-                containerStyle={styles.input} errorMessage={showMessage1}
+                />
+                <View style={styles.viewText}><Text style={styles.text}>Usuario: *</Text></View>
+                <Input
+                    onChange={({ nativeEvent: { text } }) => setEmail(text)} labelStyle={styles.label}
+                    containerStyle={styles.input} errorMessage={showMessage1}
 
-            />
-            <View style={styles.viewText}><Text style={styles.text}>Correo electrónico: *</Text></View>
-            <Input placeholder='example@gmail.com' keyboardType='email-address'
-                onChange={({ nativeEvent: { text } }) => setEmail(text)} labelStyle={styles.label}
-                containerStyle={styles.input} errorMessage={showMessage1}
-            />
-            <View style={styles.viewText}><Text style={styles.text}>Contraseña: *</Text></View>
-            <Input placeholder='********'
-                onChange={({ nativeEvent: { text } }) => setPassword1(text)} labelStyle={styles.label}
-                containerStyle={styles.input} errorMessage={showMessage2} secureTextEntry={showPassword1}
-                rightIcon={
-                    <Icon type='material-community' name={showPassword1 ? 'eye-outline' : 'eye-off-outline'} color='tomato' onPress={() => setShowPassword1(!showPassword1)} />
-                }
-            />
-            <View style={styles.viewText}><Text style={styles.text}>Confirmar Contraseña: *</Text></View>
-            <Input placeholder='********'
-                onChange={({ nativeEvent: { text } }) => setPassword2(text)} labelStyle={styles.label}
-                containerStyle={styles.input} errorMessage={showMessage2} secureTextEntry={showPassword2}
-                rightIcon={
-                    <Icon type='material-community' name={showPassword2 ? 'eye-outline' : 'eye-off-outline'} color='tomato' onPress={() => setShowPassword2(!showPassword2)} />
-                }
-            />
-            <Button title='Registrarse' onPress={''} containerStyle={styles.btnContainer} buttonStyle={styles.btnStyle} titleStyle={{ color: "white" }} />
-            <Loading visible={visible} title='Creando Cuenta' />
-        </View>
+                />
+                <View style={styles.viewText}><Text style={styles.text}>Correo electrónico: *</Text></View>
+                <Input placeholder='example@gmail.com' keyboardType='email-address'
+                    onChange={({ nativeEvent: { text } }) => setEmail(text)} labelStyle={styles.label}
+                    containerStyle={styles.input} errorMessage={showMessage1}
+                />
+                <View style={styles.viewText}><Text style={styles.text}>Contraseña: *</Text></View>
+                <Input placeholder='********'
+                    onChange={({ nativeEvent: { text } }) => setPassword1(text)} labelStyle={styles.label}
+                    containerStyle={styles.input} errorMessage={showMessage2} secureTextEntry={showPassword1}
+                    rightIcon={
+                        <Icon type='material-community' name={showPassword1 ? 'eye-outline' : 'eye-off-outline'} color='tomato' onPress={() => setShowPassword1(!showPassword1)} />
+                    }
+                />
+                <View style={styles.viewText}><Text style={styles.text}>Confirmar Contraseña: *</Text></View>
+                <Input placeholder='********'
+                    onChange={({ nativeEvent: { text } }) => setPassword2(text)} labelStyle={styles.label}
+                    containerStyle={styles.input} errorMessage={showMessage2} secureTextEntry={showPassword2}
+                    rightIcon={
+                        <Icon type='material-community' name={showPassword2 ? 'eye-outline' : 'eye-off-outline'} color='tomato' onPress={() => setShowPassword2(!showPassword2)} />
+                    }
+                />
+                <Button title='Registrarse' onPress={''} containerStyle={styles.btnContainer} buttonStyle={styles.btnStyle} titleStyle={{ color: "white" }} />
+                <Loading visible={visible} title='Creando Cuenta' />
+            </View>
         </ScrollView>
     )
 }
@@ -122,4 +122,7 @@ const styles = StyleSheet.create({
         flexGrow: 1,
         justifyContent: 'center',
     },
+    scrollView: {
+        backgroundColor: "#fff", // Ajusta el color de fondo según tus necesidades
+      },
 });
