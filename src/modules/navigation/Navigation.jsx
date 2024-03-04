@@ -10,7 +10,7 @@ import AuthStack from './stack/AuthStack';
 import HistorialStack from './stack/HistorialStack';
 import CarritoStack from './stack/CarritoStack';
 import { CustomHeader } from '../../kernel/components/CustomHeader';
-import Perfil from './stack/Perfil';
+import PerfilStack from './stack/PerfilStack';
 
 
 
@@ -40,8 +40,8 @@ const Navigation = () => {
         <Tab.Screen name='CarritoStack' component={CarritoStack} options={{ title: 'Carrito' }} />
         <Tab.Screen name='FavoritesStack' component={FavoritesStack} options={{ title: 'Favoritos' }} />
         <Tab.Screen name='HistorialStack' component={HistorialStack} options={{ title: 'Historial' }} />
-        {userLoggedIn && <Tab.Screen  name='Perfil' options={{ title: 'Perfil' }}>
-            {() => <Perfil setUserLoggedIn={setUserLoggedIn} />}
+        {userLoggedIn && <Tab.Screen  name='PerfilStack' options={{ title: 'Perfil' }}>
+            {() => <PerfilStack setUserLoggedIn={setUserLoggedIn} />}
           </Tab.Screen>}
       </Tab.Navigator>
       ) : (<AuthStack setUserLoggedIn={setUserLoggedIn} />)}
@@ -68,7 +68,7 @@ const getIconName = (routeName, focused) => {
     case 'HistorialStack':
       iconName = focused ? 'history' : 'history';
       break;
-    case 'Perfil':
+    case 'PerfilStack':
       iconName = focused ? 'account' : 'account-outline';
       break;
   }

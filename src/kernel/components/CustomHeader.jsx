@@ -24,5 +24,6 @@ const CustomHeader = () => (
       height: 170, // Ajusta la altura según tus necesidades
       borderRadius: 120, 
       backgroundColor:'white'
+      
   },
   });

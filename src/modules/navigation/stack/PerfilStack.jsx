@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import { Button, Input, Icon } from '@rneui/base'
 import React, { useState } from 'react'
-import Loading from '../../../../src/kernel/components/Loading';
+import Loading from '../../../kernel/components/Loading';
 
 
 export default function Perfil({ setUserLoggedIn }) {
